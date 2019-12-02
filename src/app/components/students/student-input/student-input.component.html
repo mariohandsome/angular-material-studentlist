@@ -1,0 +1,52 @@
+<form
+  class="student-form"
+  [formGroup]="newStudent"
+  (ngSubmit)="onSubmit(newStudent)">
+  <mat-form-field class="student-full-width">
+    <input
+      formControlName="Fullname"
+      matInput
+      placeholder="Full name"
+      [errorStateMatcher]="matcher">
+    <mat-hint></mat-hint>
+    <mat-error *ngIf="fullnameFormControl.hasError('fullname') && !fullnameFormControl.hasError('required')">
+      Please enter a valid your full name
+    </mat-error>
+    <mat-error *ngIf="fullnameFormControl.hasError('required')">
+      Full name is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input
+      formControlName="Born"
+      (dateChange)="date($event)"
+      matInput
+      [min]="minDate"
+      [max]="maxDate"
+      [matDatepicker]="picker"
+      placeholder="Choose a date">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field class="student-full-width">
+    <input
+      formControlName="Score"
+      matInput
+      placeholder="Scrore"
+      [errorStateMatcher]="matcher">
+    <mat-hint></mat-hint>
+    <mat-error *ngIf="scoreFormControl.hasError('scrore') && !scoreFormControl.hasError('required')">
+      Please enter a valid your score
+    </mat-error>
+    <mat-error *ngIf="scoreFormControl.hasError('required')">
+      Score is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <div fxLayout="row" fxLayoutGap="15px" fxLayoutAlign="end center">
+    <button mat-raised-button color="primary">Submit</button>
+    <!-- <button mat-raised-button color="warn">Cancel</button> -->
+  </div>
+</form>

@@ -1,1 +1,10 @@
-<p>students works!</p>
+<div fxLayout="column" fxLayout.gt-md="row" fxLayoutGap.gt-md='30px grid'>
+  <div fxFlex="30%" ngxSplitArea>
+    <h2>ADD NEW STUDENT</h2>
+    <app-student-input></app-student-input>
+  </div>
+  <div fxFlex="70%" ngxSplitArea>
+    <h2>STUDENT LIST</h2>
+    <app-student-list></app-student-list>
+  </div>
+</div>

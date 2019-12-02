@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StudentService } from 'src/app/services/student.service';
 
 @Component({
   selector: 'app-students',
@@ -6,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./students.component.scss']
 })
 export class StudentsComponent implements OnInit {
-
-  constructor() { }
+  constructor(private studentService: StudentService) { }
 
   ngOnInit() {
+    this.studentService.fetchFromLocalStorage();
   }
 
 }

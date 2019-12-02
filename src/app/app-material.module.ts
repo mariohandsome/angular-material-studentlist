@@ -4,6 +4,13 @@ import { CommonModule } from '@angular/common';
 import {
   MatIconModule,
   MatButtonModule,
+  MatSidenavModule,
+  MatToolbarModule,
+  MatGridListModule,
+  MatInputModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatTableModule,
 } from '@angular/material';
 
 @NgModule({
@@ -12,10 +19,24 @@ import {
     CommonModule,
     MatIconModule,
     MatButtonModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatGridListModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatTableModule,
   ],
   exports: [
     MatIconModule,
     MatButtonModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatGridListModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatTableModule,
   ]
 })
 export class MaterialModule { }
