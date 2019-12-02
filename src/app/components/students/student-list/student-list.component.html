@@ -11,7 +11,7 @@
 
   <ng-container matColumnDef="Fullname">
     <th mat-header-cell *matHeaderCellDef> Fullname </th>
-    <td (dblclick)="isEditing = true" [ngStyle]=" isEditing && {color: red}" mat-cell *matCellDef="let element">
+    <td (keyup.enter)="isEditing = false" (keyup.esc)="isEditing = false" (dblclick)="isEditing = true" mat-cell *matCellDef="let element">
       <form
         [ngClass]="{ active: isEditing, deactive: !isEditing }"
         [formGroup]="studentName"
@@ -24,7 +24,7 @@
 
   <ng-container matColumnDef="Born">
     <th mat-header-cell *matHeaderCellDef> Born </th>
-    <td (mouseout)="isEditing = true" (dblclick)="isEditing = true" [ngStyle]=" isEditing && {color: red}" mat-cell *matCellDef="let element">
+    <td (keyup.enter)="isEditing = false" (keyup.esc)="isEditing = false" (dblclick)="isEditing = true" mat-cell *matCellDef="let element">
       <form
         [ngClass]="{ active: isEditing, deactive: !isEditing }"
         [formGroup]="studentName"
@@ -37,7 +37,7 @@
 
   <ng-container matColumnDef="Score">
     <th mat-header-cell *matHeaderCellDef> Score </th>
-    <td (mouseout)="isEditing = true" (dblclick)="isEditing = true" [ngStyle]=" isEditing && {color: red}" mat-cell *matCellDef="let element">
+    <td (keyup.enter)="isEditing = false" (keyup.esc)="isEditing = false" (dblclick)="isEditing = true" mat-cell *matCellDef="let element">
       <form
         [ngClass]="{ active: isEditing, deactive: !isEditing }"
         [formGroup]="studentName"
